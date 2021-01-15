@@ -1,4 +1,4 @@
-const journal = [
+export const journal = [
     {
         id: 1,
         date: "07/24/2025",
@@ -35,3 +35,4 @@ export const useJournalEntries = () => {
     )
     return sortedByDate
 }
+
