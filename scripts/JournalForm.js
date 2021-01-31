@@ -9,9 +9,9 @@ export const JournalFormComponent = () => {
 
     <fieldset>
         <label for="journalConcept">Concept(s) Covered</label>
-        <input type="text" name="journalConcept" id="journalConcept">
+        <input class="concept" type="text" name="journalConcept" id="journalConcept">
     </fieldset>
-    <fieldset>
+    <fieldset class="textarea">
         <label for="journalEntry">What did you learn today?</label>
         <input type="textarea" name="journalEntry" id="journalEntry">
     </fieldset>
