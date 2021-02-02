@@ -1,3 +1,5 @@
+import { saveJournalEntry } from "./JournalDataProvider.js"
+
 let contentTarget = document.querySelector("form")
 
 export const JournalFormComponent = () => {
@@ -17,14 +19,32 @@ export const JournalFormComponent = () => {
     </fieldset>
 
     <fieldset>
-        <label for="journalMood">Mood:</label>
-        <select name="journalMood" id="journalMood">
-            <option value="help">Help!</option>
-            <option value="meh">Meh</option>
-            <option value="good">I Got This!</option>
-            </select>
+        <p>Mood: </p>
+        <input type="radio" id="good" value="moods">
+        <label for="good">I Got This!</label>
+        
+        <input type="radio" id="meh" value="moods">
+        <label for="meh">Meh</label>
+        
+        <input type="radio" id="help" value="moods">
+        <label for="help">Help!</label>
     </fieldset>
 
     <button type="submit" id="recordJournalButton">Record Journal Entry</button>
     `
 }
+
+const eventHub = document.querySelector(".container")
+
+
+eventHub.addEventListener("click", event => {
+    if (event.target.id === "recordJournalButton") {
+        const newJournalEntry = {
+            date: document.querySelector("#journalDate").value,
+            concept: document.querySelector("#journalConcept").value,
+            entry: document.querySelector("#journalEntry").value,
+            mood: document.querySelector('input[type="radio"]').checked.value 
+        }
+        saveJournalEntry(newJournalEntry)
+    }
+})
