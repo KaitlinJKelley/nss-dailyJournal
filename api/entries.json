@@ -1,27 +1,103 @@
 {
-    "entries": [
-        {
-            "id": 1,
-            "date": "07/24/2025",
-            "concept": "HTML & CSS",
-            "entry": "We talked about HTML components and how to make grid layouts with Flexbox in CSS.",
-            "mood": "Meh"
-        },
-    
-        {
-            "id": 2,
-            "date": "07/26/2025",
-            "concept": "Complex Flexbox",
-            "entry": "I tried to have an element in my Flexbox layout also be another Flexbox layout. It hurt my brain. I hate Steve.",
-            "mood": "Help!"
-        },
-    
-        {
-            "id": 3,
-            "date": "07/28/2025",
-            "concept": "Complex Flexbox",
-            "entry": "I tried to have an element in my Flexbox layout also be another Flexbox layout. It hurt my brain. I hate Steve.",
-            "mood": "Help!"
-        }
-    ]
+  "entries": [
+    {
+      "id": 1,
+      "date": "07/24/2025",
+      "concept": "HTML & CSS",
+      "entry": "We talked about HTML components and how to make grid layouts with Flexbox in CSS.",
+      "mood": "Meh"
+    },
+    {
+      "id": 2,
+      "date": "07/26/2025",
+      "concept": "Complex Flexbox",
+      "entry": "I tried to have an element in my Flexbox layout also be another Flexbox layout. It hurt my brain. I hate Steve.",
+      "mood": "Help!"
+    },
+    {
+      "id": 3,
+      "date": "07/28/2025",
+      "concept": "Complex Flexbox",
+      "entry": "I tried to have an element in my Flexbox layout also be another Flexbox layout. It hurt my brain. I hate Steve.",
+      "mood": "Help!"
+    },
+    {
+      "date": "",
+      "concept": "Event Listeners",
+      "entry": "coding is a lot",
+      "id": 4
+    },
+    {
+      "date": "",
+      "concept": "Event Listeners",
+      "entry": "coding is a lot",
+      "id": 5
+    },
+    {
+      "date": "",
+      "concept": "Event Listeners",
+      "entry": "coding is a lot",
+      "id": 6
+    },
+    {
+      "date": "",
+      "concept": "Event Listeners",
+      "entry": "coding is a lot",
+      "id": 7
+    },
+    {
+      "date": "",
+      "concept": "Event Listeners",
+      "entry": "coding is a lot",
+      "id": 8
+    },
+    {
+      "date": "2021-02-17",
+      "concept": "html and css",
+      "entry": "coding is a lot",
+      "id": 9
+    },
+    {
+      "date": "2021-02-17",
+      "concept": "html and css",
+      "entry": "coding is a lot",
+      "id": 10
+    },
+    {
+      "date": "2021-02-17",
+      "concept": "html and css",
+      "entry": "coding is a lot",
+      "id": 11
+    },
+    {
+      "date": "2021-02-17",
+      "concept": "html and css",
+      "entry": "coding is a lot",
+      "id": 12
+    },
+    {
+      "date": "",
+      "concept": "",
+      "entry": "",
+      "id": 13
+    },
+    {
+      "date": "",
+      "concept": "",
+      "entry": "",
+      "id": 14
+    },
+    {
+      "date": "",
+      "concept": "",
+      "entry": "",
+      "id": 15
+    },
+    {
+      "date": "",
+      "concept": "",
+      "entry": "",
+      "id": 16
+    }
+  ]
 }
