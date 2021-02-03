@@ -20,7 +20,7 @@ h2 {
 
 /* Form */
 
-form {
+.form {
 	display: flex;
 	flex-direction: column;
 	flex: 75%;
@@ -30,7 +30,7 @@ form {
 	background-color: lightgray;
 }
 
-form > fieldset {
+.form > fieldset {
 	border: none;
 }
 
