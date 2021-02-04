@@ -1,5 +1,5 @@
-import { getEntries, useJournalEntries } from "./JournalDataProvider.js"
-import { JournalEntryComponent } from "./JournalEntry.js"
+import { getEntries, useJournalEntries } from "../JournalDataProvider.js"
+import { JournalEntryComponent } from "../JournalEntry.js"
 
 // DOM reference to where all entries will be rendered
 const entryLog = document.querySelector(".pastEntries")
@@ -21,3 +21,16 @@ export const EntryListComponent = () => {
         }
     )
 }
+
+const eventHub = document.querySelector(".container")
+
+eventHub.addEventListener("ShowEntriesClicked", event => {
+    EntryListComponent()
+    }
+)
+
+// eventHub.addEventListener("journalStateChanged", event => {
+//     if (entryLog !== "") {
+//         EntryListComponent()
+//     }
+// })

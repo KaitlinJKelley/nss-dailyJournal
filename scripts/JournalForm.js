@@ -1,6 +1,6 @@
 import { saveJournalEntry } from "./JournalDataProvider.js"
 
-let contentTarget = document.querySelector("form")
+let contentTarget = document.querySelector(".form")
 
 export const JournalFormComponent = () => {
     contentTarget.innerHTML += `
