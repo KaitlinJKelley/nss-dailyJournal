@@ -24,13 +24,27 @@ export const EntryListComponent = () => {
 
 const eventHub = document.querySelector(".container")
 
+let stateChanged = false
 eventHub.addEventListener("ShowEntriesClicked", event => {
     EntryListComponent()
+    stateChanged = true
     }
 )
 
-// eventHub.addEventListener("journalStateChanged", event => {
-//     if (entryLog !== "") {
-//         EntryListComponent()
-//     }
-// })
+// Listen for state change. If the state was changed to true => get entries, copy array, copy the last (newest) object into a new array, 
+// run that object through the JournalEntryComponent, and render to DOM in past entries
+eventHub.addEventListener("journalStateChanged", event => {
+    if (stateChanged === true) {
+        getEntries()
+        .then(() => { 
+            const entries = useJournalEntries()
+    
+            const newEntry = entries.slice(-1)
+
+            entryLog.innerHTML += `${JournalEntryComponent(newEntry[0])}`
+            
+            }
+        )
+    }
+    return entryLog.innerHTML
+})
