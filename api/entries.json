@@ -1,18 +1,34 @@
 {
   "entries": [
     {
+      "id": 1,
       "date": "2021-02-26",
       "concept": "Event Listeners",
       "entry": "Successfully listened for events...mostly",
-      "mood": "Meh",
-      "id": 1
+      "moodId": 2
     },
     {
+      "id": 2,
       "date": "2021-02-21",
       "concept": "html and css",
       "entry": "Successfully listened for events...mostly",
-      "mood": "I need help!",
-      "id": 2
+      "moodId": 3
+    }
+  ],
+  
+  "moods": [
+    {
+      "id": 1,
+      "label": "I got this!"
+    },
+    {
+      "id": 2,
+      "label": "Meh"
+    },
+    {
+      "id": 3,
+      "label": "Help!"
     }
   ]
+  
 }
