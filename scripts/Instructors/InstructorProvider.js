@@ -10,6 +10,5 @@ export const getInstructors = () => {
 }
 
 export const useInstructors = () => {
-    instructors.slice()
-    console.log(instructors)
+    return instructors.slice()
 }

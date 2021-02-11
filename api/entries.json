@@ -1,25 +1,36 @@
 {
   "entries": [
     {
-      "date": "2021-02-15",
-      "concept": "html and css",
-      "entry": "Successfully listened for events...mostly",
-      "moodId": "1",
+      "date": "2021-02-08",
+      "concept": "ERD",
+      "entry": "New",
+      "moodId": "3",
+      "instructorId": "4",
       "id": 1
     },
     {
-      "date": "2021-02-09",
-      "concept": "Event Listeners",
-      "entry": "Successfully listened for events...mostly",
-      "moodId": "2",
+      "date": "2021-02-03",
+      "concept": "new",
+      "entry": "different",
+      "moodId": "1",
+      "instructorId": "3",
       "id": 2
     },
     {
-      "date": "2021-01-31",
-      "concept": "ERDs",
-      "entry": "I know they're related",
-      "moodId": "3",
+      "date": "",
+      "concept": "",
+      "entry": "",
+      "moodId": "0",
+      "instructorId": "0",
       "id": 3
+    },
+    {
+      "date": "2021-02-02",
+      "concept": "Event Listeners",
+      "entry": "Successfully listened for events...mostly",
+      "moodId": "1",
+      "instructorId": "1",
+      "id": 4
     }
   ],
   "moods": [
@@ -36,26 +47,26 @@
       "label": "Help!"
     }
   ],
-  "Instructors": [
+  "instructors": [
     {
       "id": 1,
       "first_name": "Kisie",
       "last_name": "David"
-  },
-  {
+    },
+    {
       "id": 2,
       "first_name": "Scort",
       "last_name": "Silver"
-  },
-  {
-    "id": 3,
-    "first_name": "Brian",
-    "last_name": "Nilsen"
-  },
-  {
-    "id": 4,
-    "first_name": "Sage",
-    "last_name": "Wisdowm"
-  }
+    },
+    {
+      "id": 3,
+      "first_name": "Brian",
+      "last_name": "Nilsen"
+    },
+    {
+      "id": 4,
+      "first_name": "Sage",
+      "last_name": "Wisdowm"
+    }
   ]
 }

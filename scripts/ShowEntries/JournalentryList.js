@@ -38,6 +38,7 @@ eventHub.addEventListener("journalStateChanged", event => {
         getEntries()
         .then(() => { 
             const entries = useJournalEntries()
+            // console.log(entries)
     
             const newEntry = entries.slice(-1)
 

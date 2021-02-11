@@ -5,6 +5,7 @@ export const JournalEntryComponent = (entry) => {
             <p>${entry.entry}</p>
             <p>Entry Date: ${entry.date}</p>
             <p>Mood: ${entry.mood.label}</p>
+            <p>Instructor: ${entry.instructor.first_name} ${entry.instructor.last_name}</p>
         </section>
     `
 }
