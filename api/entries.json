@@ -1,15 +1,17 @@
 {
   "entries": [
     {
-      "date": "2021-02-17",
-      "concept": "html and css",
-      "entry": "coding is a lot",
+      "date": "2021-02-26",
+      "concept": "Event Listeners",
+      "entry": "Successfully listened for events...mostly",
+      "mood": "Meh",
       "id": 1
     },
     {
-      "date": "2021-02-24",
-      "concept": "Event Listeners",
+      "date": "2021-02-21",
+      "concept": "html and css",
       "entry": "Successfully listened for events...mostly",
+      "mood": "I need help!",
       "id": 2
     }
   ]

@@ -39,11 +39,19 @@ const eventHub = document.querySelector(".container")
 
 eventHub.addEventListener("click", event => {
     if (event.target.id === "recordJournalButton") {
+        let chosenMood = ""
+        if (document.querySelector('input[id="good"]').checked === true) {
+            chosenMood = "I got this!"
+        } else if (document.querySelector('input[id="meh"]').checked === true) {
+            chosenMood = "Meh"
+        } else if (document.querySelector('input[id="help"]').checked === true) {
+            chosenMood = "I need help!"
+        }
         const newJournalEntry = {
             date: document.querySelector("#journalDate").value,
             concept: document.querySelector("#journalConcept").value,
             entry: document.querySelector("#journalEntry").value,
-            mood: document.querySelector('input[type="radio"]').checked.value 
+            mood: chosenMood
         }
         saveJournalEntry(newJournalEntry)
     }
