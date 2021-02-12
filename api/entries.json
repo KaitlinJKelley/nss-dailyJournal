@@ -1,16 +1,64 @@
 {
   "entries": [
     {
-      "date": "2021-02-17",
-      "concept": "html and css",
-      "entry": "coding is a lot",
+      "date": "2021-02-16",
+      "concept": "1",
+      "entry": "1",
+      "moodId": 1,
+      "instructorId": 1,
       "id": 1
     },
     {
-      "date": "2021-02-24",
-      "concept": "Event Listeners",
-      "entry": "Successfully listened for events...mostly",
+      "date": "2021-02-02",
+      "concept": "2",
+      "entry": "2",
+      "moodId": 2,
+      "instructorId": 2,
       "id": 2
+    },
+    {
+      "date": "2021-02-01",
+      "concept": "3",
+      "entry": "3",
+      "moodId": 3,
+      "instructorId": 3,
+      "id": 3
+    }
+  ],
+  "moods": [
+    {
+      "id": 1,
+      "label": "I got this!"
+    },
+    {
+      "id": 2,
+      "label": "Meh"
+    },
+    {
+      "id": 3,
+      "label": "Help!"
+    }
+  ],
+  "instructors": [
+    {
+      "id": 1,
+      "first_name": "Kisie",
+      "last_name": "David"
+    },
+    {
+      "id": 2,
+      "first_name": "Scort",
+      "last_name": "Silver"
+    },
+    {
+      "id": 3,
+      "first_name": "Brian",
+      "last_name": "Nilsen"
+    },
+    {
+      "id": 4,
+      "first_name": "Sage",
+      "last_name": "Wisdom"
     }
   ]
 }

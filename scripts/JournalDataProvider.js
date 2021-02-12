@@ -1,7 +1,7 @@
 let journal = []
 
 export const getEntries = () => {
-    return fetch("http://localhost:8088/entries") // Fetch from the API
+    return fetch("http://localhost:8088/entries?_expand=mood&_expand=instructor") // Fetch from the API
         .then(response => response.json())  // Parse as JSON
         .then(entries => {
             // What should happen when we finally have the array?
@@ -30,7 +30,7 @@ const dispatchStateChangeEvent = () => {
 
 export const saveJournalEntry = entryObj => {
     // Use `fetch` with the POST method to add your entry to your API
-fetch("http://localhost:8088/entries", {
+fetch("http://localhost:8088/entries?_expand=mood&_expand=instructor", {
     method: "POST",
     headers: {
         "Content-Type": "application/json"

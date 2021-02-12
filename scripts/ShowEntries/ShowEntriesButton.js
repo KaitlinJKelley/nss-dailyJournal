@@ -2,6 +2,7 @@ const contentTarget = document.querySelector(".pastEntries")
 
 export const ShowNotesButton = () => {
     contentTarget.innerHTML += `
+        
         <button id="ShowEntriesButton">Show Past Journal Entries</button>
     `
 }
@@ -14,3 +15,4 @@ eventHub.addEventListener("click", event => {
         eventHub.dispatchEvent(customEvent)
     }
 })
+
