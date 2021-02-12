@@ -70,14 +70,15 @@ const eventHub = document.querySelector(".container")
 
 eventHub.addEventListener("click", event => {
     if (event.target.id === "recordJournalButton") {
-   
+        debugger
         const newJournalEntry = {
             date: document.querySelector("#journalDate").value,
             concept: document.querySelector("#journalConcept").value,
             entry: document.querySelector("#journalEntry").value,
-            moodId: document.querySelector("#journalMood").value,
-            instructorId: document.querySelector("#whoTaught").value
+            moodId: parseInt(document.querySelector("#journalMood").value),
+            instructorId: parseInt(document.querySelector("#whoTaught").value)
         }
+        console.log(newJournalEntry.moodId)
         saveJournalEntry(newJournalEntry)
     }
 })

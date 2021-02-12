@@ -1,36 +1,28 @@
 {
   "entries": [
     {
-      "date": "2021-02-08",
-      "concept": "ERD",
-      "entry": "New",
-      "moodId": "3",
-      "instructorId": "4",
+      "date": "2021-02-16",
+      "concept": "1",
+      "entry": "1",
+      "moodId": 1,
+      "instructorId": 1,
       "id": 1
     },
     {
-      "date": "2021-02-03",
-      "concept": "new",
-      "entry": "different",
-      "moodId": "1",
-      "instructorId": "3",
+      "date": "2021-02-02",
+      "concept": "2",
+      "entry": "2",
+      "moodId": 2,
+      "instructorId": 2,
       "id": 2
     },
     {
-      "date": "",
-      "concept": "",
-      "entry": "",
-      "moodId": "0",
-      "instructorId": "0",
+      "date": "2021-02-01",
+      "concept": "3",
+      "entry": "3",
+      "moodId": 3,
+      "instructorId": 3,
       "id": 3
-    },
-    {
-      "date": "2021-02-02",
-      "concept": "Event Listeners",
-      "entry": "Successfully listened for events...mostly",
-      "moodId": "1",
-      "instructorId": "1",
-      "id": 4
     }
   ],
   "moods": [
@@ -66,7 +58,7 @@
     {
       "id": 4,
       "first_name": "Sage",
-      "last_name": "Wisdowm"
+      "last_name": "Wisdom"
     }
   ]
 }
