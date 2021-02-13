@@ -1,4 +1,4 @@
-import { getEntries, useJournalEntries } from "../JournalDataProvider.js"
+import { getEntries, useJournalEntries, deleteEntry } from "../JournalDataProvider.js"
 import { JournalEntryComponent } from "../JournalEntry.js"
 
 // DOM reference to where all entries will be rendered
@@ -39,20 +39,13 @@ eventHub.addEventListener("ShowEntriesClicked", event => {
 // Listen for state change. If the state was changed to true => get entries, copy array, copy the last (newest) object into a new array, 
 // run that object through the JournalEntryComponent, and render to DOM in past entries
 eventHub.addEventListener("journalStateChanged", event => {
-    debugger
+    
     if (stateChanged === true) {
     EntryListComponent()
-        //     getEntries()
-    //     .then(() => { 
-    //         const entries = useJournalEntries()
-    //         // console.log(entries)
-    
-    //         const newEntry = entries.slice(-1)
-
-    //         entryLog.innerHTML += `${JournalEntryComponent(newEntry[0])}`
-            
-    //         }
-    //     )
     }
-    // return entryLog.innerHTML
+})
+
+eventHub.addEventListener("DeleteButtonClicked", event => {
+    stateChanged = true
+    deleteEntry(event.detail.id)
 })
