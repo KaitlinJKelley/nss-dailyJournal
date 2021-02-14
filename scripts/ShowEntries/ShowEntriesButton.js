@@ -1,6 +1,6 @@
 const contentTarget = document.querySelector(".pastEntries")
 
-export const ShowNotesButton = () => {
+export const ShowEntriesButton = () => {
     contentTarget.innerHTML += `
         
         <button id="ShowEntriesButton">Show Past Journal Entries</button>
