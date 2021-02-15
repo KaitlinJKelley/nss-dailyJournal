@@ -56,6 +56,10 @@ button {
 	background-color: #59c359;
 }
 
+.filters {
+	background-color: papayawhip;
+}
+
 /* Aside */
 .pastEntries {
 	width: 20%;
