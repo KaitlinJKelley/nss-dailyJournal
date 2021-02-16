@@ -87,6 +87,7 @@ eventHub.addEventListener("click", event => {
         saveJournalEntry(newJournalEntry)
         
         let tags = document.querySelector("#tag").value
+        if (tags !== "") {
         let tagsArray = tags.split(",")
         
         tagsArray.map(tagString => {
@@ -135,5 +136,6 @@ eventHub.addEventListener("click", event => {
                     })
             }
         })})
+        }
     }   
 })
