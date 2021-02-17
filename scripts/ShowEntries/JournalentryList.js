@@ -65,3 +65,23 @@ eventHub.addEventListener("DeleteButtonClicked", event => {
     stateChanged = true
     deleteEntry(event.detail.id)
 })
+
+eventHub.addEventListener("click", clickEvent => {
+    if (clickEvent.target.id.startsWith("editEntry--")) {
+        const [notUsed, entryId] = clickEvent.target.id.split("--")
+
+        /*
+            Let all other components know that the user chose
+            to edit an entry, and attach data to the message
+            so that any listeners know which entry should be
+            edited.
+        */
+
+        const message = new CustomEvent("editClicked", {
+            detail: {
+                id: entryId
+            }
+        })
+        eventHub.dispatchEvent(message)
+    }
+})
