@@ -1,6 +1,6 @@
 import { getEntries, useJournalEntries } from "./JournalDataProvider.js"
 
-export const JournalEntryComponent = (entry) => {
+export const JournalEntryComponent = (entry, tagsArray) => {
     return `
         <section id="entry--${entry.id}" class="journalEntry">
             <h3>${entry.concept}</h3>
@@ -10,6 +10,7 @@ export const JournalEntryComponent = (entry) => {
             <p>Instructor: ${entry.instructor.first_name} ${entry.instructor.last_name}</p>
             <button id="editEntry--${entry.id}">Edit</button>
             <input type="hidden" name="entryId" id="entryId" value="">
+            <p>Tags: ${tagsArray.map(tagObj => `${tagObj.subject}`).join("")}<p>
             <button id="deleteEntry--${entry.id}">Delete</button>
         </section>
     `

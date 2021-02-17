@@ -3,6 +3,8 @@ import { pastEntriesHeading } from "../FixFunctions/PastEntriesHeading.js"
 import { getEntries, useJournalEntries, deleteEntry } from "../JournalDataProvider.js"
 import { JournalEntryComponent } from "../JournalEntry.js"
 import { FilterBar } from "../Moods/FilterBar.js"
+import { getEntryTags, useEntryTags } from "../Tags/EntryTagProvider.js"
+import { getTags, useTags } from "../Tags/TagProvider.js"
 
 // DOM reference to where all entries will be rendered
 
@@ -11,12 +13,23 @@ const entryLog = document.querySelector(".pastEntries")
 export const EntryListComponent = () => {
     // Use the journal entry data from the data provider component
     getEntries()
+        .then(getTags)
+        .then(getEntryTags)
         .then(() => { 
-        const entries = useJournalEntries()
+        const allEntries = useJournalEntries()
+        const allTags = useTags()
+        const allEntryTags = useEntryTags()
 
-        entryLog.innerHTML = entries.map(entry => JournalEntryComponent(entry)).join("")
-        
-        return entryLog.innerHTML
+        entryLog.innerHTML = allEntries.map(entry => {
+            debugger
+            const relatedEntryTags = allEntryTags.filter(et => et.entryId === entry.id)
+
+            const relatedTags = relatedEntryTags.map(rt => {
+                return allTags.find(tag => rt.tagId === tag.id)
+            })
+
+            return JournalEntryComponent(entry, relatedTags)
+        }).join("")
         }
         )
         // Only runs when Show Entries button is clicked
