@@ -146,8 +146,13 @@ eventHub.addEventListener("click", event => {
         } else {
             // id value is there, so PUT entry with `updateEntry()`
             // from data provider
-            
+
             updateEntry(newJournalEntry)
         }
     }   
+})
+
+
+eventHub.addEventListener("journalEdited", event => {
+    const 
 })

@@ -37,6 +37,13 @@ eventHub.addEventListener("editClicked", event => {
         const entryToEdit = entriesCollection.find(entry => parseInt(event.detail.id) === entry.id)
 
         renderToEdit(entryToEdit)
+
+        const customEvent = ("journalEdited", {
+            detail: {
+                editedId: entryToEdit.id
+            }
+        })
+        eventHub.dispatchEvent(customEvent)
     })
 })
 
