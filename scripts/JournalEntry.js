@@ -1,3 +1,5 @@
+import { getEntries, useJournalEntries } from "./JournalDataProvider.js"
+
 export const JournalEntryComponent = (entry, tagsArray) => {
     return `
         <section id="entry--${entry.id}" class="journalEntry">
@@ -6,6 +8,8 @@ export const JournalEntryComponent = (entry, tagsArray) => {
             <p>Entry Date: ${entry.date}</p>
             <p>Mood: ${entry.mood.label}</p>
             <p>Instructor: ${entry.instructor.first_name} ${entry.instructor.last_name}</p>
+            <button id="editEntry--${entry.id}">Edit</button>
+            <input type="hidden" name="entryId" id="entryId" value="">
             <p>Tags: ${tagsArray.map(tagObj => `${tagObj.subject}`).join("")}<p>
             <button id="deleteEntry--${entry.id}">Delete</button>
         </section>
@@ -26,3 +30,37 @@ eventHub.addEventListener("click", event => {
         eventHub.dispatchEvent(customEvent)
     }
 })
+
+eventHub.addEventListener("editClicked", event => {
+    getEntries()
+    .then(() => {
+        const entriesCollection = useJournalEntries()
+        const entryToEdit = entriesCollection.find(entry => parseInt(event.detail.id) === entry.id)
+
+        renderToEdit(entryToEdit)
+
+        const id = document.querySelector("#entryId")
+        id.value = entryToEdit.id
+
+        const customEvent = new CustomEvent("journalEdited", {
+            detail: {
+                editedId: entryToEdit.id
+            }
+        })
+        eventHub.dispatchEvent(customEvent)
+    })
+})
+
+const renderToEdit = (editEntry) => {
+    let date = document.querySelector("#journalDate")
+    let concept = document.querySelector("#journalConcept")
+    let entry = document.querySelector("#journalEntry")
+    let instructor = document.querySelector("#whoTaught")
+    let mood = document.querySelector("#journalMood")
+
+    date.value = editEntry.date
+    concept.value = editEntry.concept
+    entry.value = editEntry.entry
+    instructor.value = editEntry.instructor.id
+    mood.value = editEntry.mood.id
+}

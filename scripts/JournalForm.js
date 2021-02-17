@@ -1,5 +1,5 @@
 import { getInstructors, useInstructors } from "./Instructors/InstructorProvider.js"
-import { getEntries, saveJournalEntry, useJournalEntries } from "./JournalDataProvider.js"
+import { getEntries, saveJournalEntry, updateEntry, useJournalEntries } from "./JournalDataProvider.js"
 import { getMoods, useMoods } from "./Moods/MoodProvider.js"
 import { saveEntryTag } from "./Tags/EntryTagProvider.js"
 import { findTag, saveTag, getTags, useTags } from "./Tags/TagProvider.js"
@@ -19,6 +19,7 @@ export const JournalFormComponent = () => {
                 
                 
                 contentTarget.innerHTML += `
+                
                 <fieldset>
                     <label for="journalDate">Entry Date</label>
                     <input type="date" name="journalDate" id="journalDate">
@@ -86,58 +87,74 @@ eventHub.addEventListener("click", event => {
             moodId: parseInt(document.querySelector("#journalMood").value),
             instructorId: parseInt(document.querySelector("#whoTaught").value)
         }
-        saveJournalEntry(newJournalEntry)
         
-        let tags = document.querySelector("#tag").value
-        if (tags !== "") {
-        let tagsArray = tags.split(",")
-        
-        tagsArray.map(tagString => {
-            
-            const tag = {
-                subject: tagString
-            }
-
-            
-            findTag(tag.subject)  // tag variable will have a string value
-
-            .then(matches => {  // `matches` variable value will be array of matching objects
-            let matchingTag = null
-            
-            if (matches.length > 0) {
-                matchingTag = matches[0].id
-            }
-            
-            if (matchingTag === null) {
-                // Tag doesn't exist. Create it then assign it to entry.
-                saveTag(tag)
+                let tags = document.querySelector("#tag").value
+                if (tags !== "") {
+                    let tagsArray = tags.split(",")
+                    
+                    tagsArray.map(tagString => {
+                        
+                        const tag = {
+                            subject: tagString
+                        }
+                        
+                        findTag(tag.subject)  // tag variable will have a string value
+                        
+                        .then(matches => {  // `matches` variable value will be array of matching objects
+                        let matchingTag = null
+                        
+                        if (matches.length > 0) {
+                            matchingTag = matches[0].id
+                        }
+                        
+                        if (matchingTag === null) {
+                            // Tag doesn't exist. Create it then assign it to entry.
+                            saveTag(tag)
+                            
+                            .then(new_tag => {
+                                getEntries()
+                                .then(() => {
+                                    let entries = useJournalEntries()
+                                    let entry = entries[0]
+                                    
+                                    saveEntryTag(entry.id, new_tag.id)
+                                })
+                            })
+                        }
+                        else {
+                            // Tag does exist. Assign it to entry.
+                            
+                            getEntries()
+                            .then(getTags)
+                            .then(() => {
+                                let entries = useJournalEntries()
+                                let entry = entries[0]
+                                
+                                let tags = useTags()
+                                const foundTag = tags.find(tagItem => tagItem.subject === tag.subject)
+                                
+                                saveEntryTag(entry.id, foundTag.id)
+                            })
+                        }
+                    })})
+                }
+                const id = document.querySelector("#entryId")
                 
-                .then(new_tag => {
-                    getEntries()
-                    .then(() => {
-                        let entries = useJournalEntries()
-                        let entry = entries[0]
-                        
-                        saveEntryTag(entry.id, new_tag.id)
-                    })
-                })
-            }
-            else {
-                // Tag does exist. Assign it to entry.
-
-                getEntries()
-                    .then(getTags)
-                    .then(() => {
-                        let entries = useJournalEntries()
-                        let entry = entries[0]
-
-                        let tags = useTags()
-                        const foundTag = tags.find(tagItem => tagItem.subject === tag.subject)
-                        
-                        saveEntryTag(entry.id, foundTag.id)
-                    })
-            }
-        })})
-        }
+                if (id.value === "") {
+                    // No id value, so POST new entry with `saveEntry()`
+                    // from data provider
+                    saveJournalEntry(newJournalEntry)
+                } else {
+                    // id value is there, so PUT entry with `updateEntry()`
+                    // from data provider
+                    
+                    newJournalEntry.id = editedId
+                    updateEntry(newJournalEntry)
+                }
     }   
+})
+
+let editedId
+eventHub.addEventListener("journalEdited", event => {
+    editedId = event.detail.editedId
 })

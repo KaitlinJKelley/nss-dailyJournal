@@ -51,3 +51,17 @@ export const deleteEntry = entryObj => {
         .then(getEntries)  // <-- Get all journal entries
         .then(dispatchStateChangeEvent)  // <-- Broadcast the state change event
 }
+
+
+export const updateEntry = entryObj => {
+    // debugger
+    return fetch(`http://localhost:8088/entries/${entryObj.id}`, {
+        method: "PUT",
+        headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(entryObj)
+        })
+        .then(getEntries)  // <-- Get all journal entries
+        .then(dispatchStateChangeEvent)  // <-- Broadcast the state change event
+}
