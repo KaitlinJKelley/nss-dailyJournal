@@ -19,7 +19,7 @@ export const JournalFormComponent = () => {
                 
                 
                 contentTarget.innerHTML += `
-                
+                <input type="hidden" name="entryId" id="entryId" value="">
                 <fieldset>
                     <label for="journalDate">Entry Date</label>
                     <input type="date" name="journalDate" id="journalDate">
@@ -150,6 +150,7 @@ eventHub.addEventListener("click", event => {
                     
                     newJournalEntry.id = editedId
                     updateEntry(newJournalEntry)
+                    id.value = ""
                 }
     }   
 })

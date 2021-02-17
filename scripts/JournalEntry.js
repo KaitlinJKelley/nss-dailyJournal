@@ -8,9 +8,8 @@ export const JournalEntryComponent = (entry, tagsArray) => {
             <p>Entry Date: ${entry.date}</p>
             <p>Mood: ${entry.mood.label}</p>
             <p>Instructor: ${entry.instructor.first_name} ${entry.instructor.last_name}</p>
+            <p>${tagsArray.map(tagObj => `#${tagObj.subject}`).join(" ")}<p>
             <button id="editEntry--${entry.id}">Edit</button>
-            <input type="hidden" name="entryId" id="entryId" value="">
-            <p>Tags: ${tagsArray.map(tagObj => `${tagObj.subject}`).join("")}<p>
             <button id="deleteEntry--${entry.id}">Delete</button>
         </section>
     `
