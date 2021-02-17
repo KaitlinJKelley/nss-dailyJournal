@@ -9,7 +9,7 @@ export const JournalEntryComponent = (entry) => {
             <p>Mood: ${entry.mood.label}</p>
             <p>Instructor: ${entry.instructor.first_name} ${entry.instructor.last_name}</p>
             <button id="editEntry--${entry.id}">Edit</button>
-            <input type="hidden" name="entryId" id="entryId">
+            <input type="hidden" name="entryId" id="entryId" value="">
             <button id="deleteEntry--${entry.id}">Delete</button>
         </section>
     `
@@ -38,7 +38,10 @@ eventHub.addEventListener("editClicked", event => {
 
         renderToEdit(entryToEdit)
 
-        const customEvent = ("journalEdited", {
+        const id = document.querySelector("#entryId")
+        id.value = entryToEdit.id
+
+        const customEvent = new CustomEvent("journalEdited", {
             detail: {
                 editedId: entryToEdit.id
             }

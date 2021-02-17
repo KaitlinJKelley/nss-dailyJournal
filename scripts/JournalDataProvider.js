@@ -52,7 +52,9 @@ export const deleteEntry = entryObj => {
         .then(dispatchStateChangeEvent)  // <-- Broadcast the state change event
 }
 
+
 export const updateEntry = entryObj => {
+    // debugger
     return fetch(`http://localhost:8088/entries/${entryObj.id}`, {
         method: "PUT",
         headers: {

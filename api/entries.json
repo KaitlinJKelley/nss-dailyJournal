@@ -1,7 +1,7 @@
 {
   "entries": [
     {
-      "date": "2021-02-25",
+      "date": "2021-02-11",
       "concept": "1",
       "entry": "1",
       "moodId": 2,
@@ -9,28 +9,12 @@
       "id": 1
     },
     {
-      "date": "2021-02-12",
-      "concept": "Event Listeners",
-      "entry": "Successfully listened for events...mostly",
-      "moodId": 3,
-      "instructorId": 2,
+      "date": "2021-02-08",
+      "concept": "2",
+      "entry": "2",
+      "moodId": 1,
+      "instructorId": 4,
       "id": 2
-    },
-    {
-      "date": "2021-02-12",
-      "concept": "Event Listeners",
-      "entry": "Successfully listened for events",
-      "moodId": 3,
-      "instructorId": 2,
-      "id": 3
-    },
-    {
-      "date": "2021-02-12",
-      "concept": "Event",
-      "entry": "Successfully listened for events",
-      "moodId": 3,
-      "instructorId": 2,
-      "id": 4
     }
   ],
   "moods": [
@@ -83,5 +67,31 @@
       "subject": "fetch"
     }
   ],
-  "entrytags": []
+  "entrytags": [
+    {
+      "enrtyId": 1,
+      "tagId": 3,
+      "id": 1
+    },
+    {
+      "enrtyId": 1,
+      "tagId": 3,
+      "id": 2
+    },
+    {
+      "enrtyId": 1,
+      "tagId": 3,
+      "id": 3
+    },
+    {
+      "enrtyId": 1,
+      "tagId": 3,
+      "id": 4
+    },
+    {
+      "enrtyId": 1,
+      "tagId": 3,
+      "id": 5
+    }
+  ]
 }
