@@ -1,3 +1,5 @@
+import { dispatchStateChangeEvent } from "../JournalDataProvider.js"
+
 // Gets all tags from API
 let allTags = []
 export const getTags = () => {
@@ -28,6 +30,8 @@ export const saveTag = (tagObj) => {
         },
         body: JSON.stringify(tagObj)
     })
+    .then(getTags)
+    .then(dispatchStateChangeEvent)
     .then(() => {
         let tagArray = findTag(tagObj.subject)
         return tagArray

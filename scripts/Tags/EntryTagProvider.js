@@ -21,4 +21,5 @@ export const saveEntryTag = (entry, tag) => {
         },
         body: JSON.stringify(newEntryTag)
     })
+    
 }
