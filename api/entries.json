@@ -1,5 +1,21 @@
 {
   "entries": [
+    {
+      "date": "2021-02-11",
+      "concept": "1",
+      "entry": "1",
+      "moodId": 2,
+      "instructorId": 1,
+      "id": 1
+    },
+    {
+      "date": "2021-02-26",
+      "concept": "Event Listeners",
+      "entry": "Successfully listened for events...mostly",
+      "moodId": 1,
+      "instructorId": 4,
+      "id": 2
+    }
   ],
   "moods": [
     {
@@ -49,8 +65,22 @@
     {
       "id": 3,
       "subject": "fetch"
+    },
+    {
+      "subject": "event listeners",
+      "id": 4
     }
   ],
   "entrytags": [
+    {
+      "entryId": 1,
+      "tagId": 3,
+      "id": 1
+    },
+    {
+      "entryId": 2,
+      "tagId": 4,
+      "id": 2
+    }
   ]
 }

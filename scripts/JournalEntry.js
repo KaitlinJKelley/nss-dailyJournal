@@ -1,4 +1,4 @@
-export const JournalEntryComponent = (entry) => {
+export const JournalEntryComponent = (entry, tagsArray) => {
     return `
         <section id="entry--${entry.id}" class="journalEntry">
             <h3>${entry.concept}</h3>
@@ -6,6 +6,7 @@ export const JournalEntryComponent = (entry) => {
             <p>Entry Date: ${entry.date}</p>
             <p>Mood: ${entry.mood.label}</p>
             <p>Instructor: ${entry.instructor.first_name} ${entry.instructor.last_name}</p>
+            <p>Tags: ${tagsArray.map(tagObj => `${tagObj.subject}`).join("")}<p>
             <button id="deleteEntry--${entry.id}">Delete</button>
         </section>
     `
