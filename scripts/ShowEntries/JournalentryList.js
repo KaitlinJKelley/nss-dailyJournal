@@ -21,7 +21,7 @@ export const EntryListComponent = () => {
         const allEntryTags = useEntryTags()
 
         entryLog.innerHTML = allEntries.map(entry => {
-            debugger
+            
             const relatedEntryTags = allEntryTags.filter(et => et.entryId === entry.id)
 
             const relatedTags = relatedEntryTags.map(rt => {
