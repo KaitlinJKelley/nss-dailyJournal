@@ -37,17 +37,5 @@ export const saveTag = (tagObj) => {
     })
 }
 
-export const saveEntryTag = (entry, tag) => {
-    const newEntryTag = {
-        enrtyId: entry,
-        tagId: tag
-    }
-    fetch("http://localhost:8088/entrytags", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(newEntryTag)
-    })
-}
+
 
