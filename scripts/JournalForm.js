@@ -1,7 +1,7 @@
 import { getInstructors, useInstructors } from "./Instructors/InstructorProvider.js"
 import { getEntries, saveJournalEntry, updateEntry, useJournalEntries } from "./JournalDataProvider.js"
 import { getMoods, useMoods } from "./Moods/MoodProvider.js"
-import { saveEntryTag } from "./Tags/EntryTagProvider.js"
+import { getEntryTags, saveEntryTag } from "./Tags/EntryTagProvider.js"
 import { findTag, saveTag, getTags, useTags } from "./Tags/TagProvider.js"
 
 

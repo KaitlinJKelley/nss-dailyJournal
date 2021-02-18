@@ -24,7 +24,7 @@ export const useJournalEntries = () => {
 const eventHub = document.querySelector(".container")
 
 // Tells the application that the state of the journal entries has chancged
-const dispatchStateChangeEvent = () => {
+export const dispatchStateChangeEvent = () => {
     eventHub.dispatchEvent(new CustomEvent("journalStateChanged"))
 }
 
