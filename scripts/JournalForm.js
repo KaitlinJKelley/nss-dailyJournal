@@ -119,6 +119,7 @@ eventHub.addEventListener("click", event => {
                                     
                                     saveEntryTag(entry.id, new_tag.id)
                                 })
+                                Promise.all([saveEntryTag]).then(getEntryTags)
                             })
                         }
                         else {
@@ -135,6 +136,7 @@ eventHub.addEventListener("click", event => {
                                 
                                 saveEntryTag(entry.id, foundTag.id)
                             })
+                            Promise.all([saveEntryTag]).then(getEntryTags)
                         }
                     })})
                 }
