@@ -42,7 +42,7 @@ export const JournalFormComponent = () => {
                         ${
                             allInstructors.map(
                                 (instructor) => {
-                                    return `<option value="${ instructor.id }">${ instructor.first_name } ${ instructor.last_name }</option>`
+                                    return `<option value="${ instructor.id }">${ instructor.firstName } ${ instructor.lastName }</option>`
                                 }
                                 ).join("")
                         }
@@ -85,61 +85,62 @@ eventHub.addEventListener("click", event => {
             concept: document.querySelector("#journalConcept").value,
             entry: document.querySelector("#journalEntry").value,
             moodId: parseInt(document.querySelector("#journalMood").value),
-            instructorId: parseInt(document.querySelector("#whoTaught").value)
+            instructorId: parseInt(document.querySelector("#whoTaught").value),
+            tags: [document.querySelector("#tag").value]
         }
         
-                let tags = document.querySelector("#tag").value
-                if (tags !== "") {
-                    let tagsArray = tags.split(",")
+                // let tags = document.querySelector("#tag").value
+                // if (tags !== "") {
+                //     let tagsArray = tags.split(",")
                     
-                    tagsArray.map(tagString => {
+                //     tagsArray.map(tagString => {
                         
-                        const tag = {
-                            subject: tagString
-                        }
+                //         const tag = {
+                //             subject: tagString
+                //         }
                         
-                        findTag(tag.subject)  // tag variable will have a string value
+                //         findTag(tag.subject)  // tag variable will have a string value
                         
-                        .then(matches => {  // `matches` variable value will be array of matching objects
-                        let matchingTag = null
+                //         .then(matches => {  // `matches` variable value will be array of matching objects
+                //         let matchingTag = null
                         
-                        if (matches.length > 0) {
-                            matchingTag = matches[0].id
-                        }
+                //         if (matches.length > 0) {
+                //             matchingTag = matches[0].id
+                //         }
                         
-                        if (matchingTag === null) {
-                            // Tag doesn't exist. Create it then assign it to entry.
-                            saveTag(tag)
+                //         if (matchingTag === null) {
+                //             // Tag doesn't exist. Create it then assign it to entry.
+                //             saveTag(tag)
                             
-                            .then(new_tag => {
-                                getEntries()
-                                .then(() => {
-                                    let entries = useJournalEntries()
-                                    let entry = entries[0]
+                //             .then(new_tag => {
+                //                 getEntries()
+                //                 .then(() => {
+                //                     let entries = useJournalEntries()
+                //                     let entry = entries[0]
                                     
-                                    saveEntryTag(entry.id, new_tag.id)
-                                })
-                                Promise.all([saveEntryTag]).then(getEntryTags)
-                            })
-                        }
-                        else {
-                            // Tag does exist. Assign it to entry.
+                //                     saveEntryTag(entry.id, new_tag.id)
+                //                 })
+                //                 Promise.all([saveEntryTag]).then(getEntryTags)
+                //             })
+                //         }
+                //         else {
+                //             // Tag does exist. Assign it to entry.
                             
-                            getEntries()
-                            .then(getTags)
-                            .then(() => {
-                                let entries = useJournalEntries()
-                                let entry = entries[0]
+                //             getEntries()
+                //             .then(getTags)
+                //             .then(() => {
+                //                 let entries = useJournalEntries()
+                //                 let entry = entries[0]
                                 
-                                let tags = useTags()
-                                const foundTag = tags.find(tagItem => tagItem.subject === tag.subject)
+                //                 let tags = useTags()
+                //                 const foundTag = tags.find(tagItem => tagItem.subject === tag.subject)
                                 
-                                saveEntryTag(entry.id, foundTag.id)
-                            })
-                            Promise.all([saveEntryTag]).then(getEntryTags)
-                        }
-                    })})
-                }
+                //                 saveEntryTag(entry.id, foundTag.id)
+                //             })
+                //             Promise.all([saveEntryTag]).then(getEntryTags)
+                //         }
+                //     })})
+                // }
                 const id = document.querySelector("#entryId")
                 
                 if (id.value === "") {
